@@ -1,0 +1,86 @@
+{
+  "name": "data-to-interface",
+  "displayName": "data-to-interface",
+  "description": "",
+  "publisher": "gaollard",
+  "version": "0.0.3",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:data-to-interface.openCustomView",
+    "onCommand:data-to-interface.fromSelectionToFile",
+    "onCommand:data-to-interface.fromSelectionToCurrent"
+  ],
+  "main": "./out/extension.js",
+  "repository": "https://github.com/Webang/vscode-plugin-data-to-interface",
+  "contributes": {
+    "commands": [
+      {
+        "command": "data-to-interface.openCustomView",
+        "title": "data-to-interface.openCustomView"
+      },
+      {
+        "command": "data-to-interface.fromSelectionToFile",
+        "title": "data-to-interface.fromSelectionToFile"
+      },
+      {
+        "command": "data-to-interface.fromSelectionToCurrent",
+        "title": "data-to-interface.fromSelectionToCurrent"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == javascript || resourceLangId == typescript",
+          "command": "data-to-interface.fromSelectionToCurrent",
+          "alt": "markdown.showPreviewToSide",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == javascript || resourceLangId == typescript",
+          "command": "data-to-interface.fromSelectionToFile",
+          "alt": "markdown.showPreviewToSide",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceLangId == javascript || resourceLangId == typescript",
+          "command": "data-to-interface.openCustomView",
+          "alt": "markdown.showPreviewToSide",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.63.0",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@vscode/test-electron": "^1.6.2",
+    "eslint": "^8.1.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.1.3",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-transform-typescript": "^7.16.7",
+    "@babel/types": "^7.16.7",
+    "@types/babel__core": "^7.1.18",
+    "json-to-ts-model": "1.0.3"
+  }
+}
