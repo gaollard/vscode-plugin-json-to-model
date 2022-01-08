@@ -21,7 +21,7 @@ data-to-interface 用于 data 到 interface 的转换，您可以对一些路径
 
 ## 5. screenshot
 
-![selection-current](https://webang.github.io/vscode-plugin-data-to-interface/screenshot/selection-current.gif)
+![selection-current](https://webang.github.io/vscode-plugin-data-to-interface/screenshot/selection-to-current.gif)
 
 ![selection-file](https://webang.github.io/vscode-plugin-data-to-interface/screenshot/from-selection.gif)
 

@@ -3,7 +3,7 @@
   "displayName": "data-to-interface",
   "description": "",
   "publisher": "gaollard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -61,7 +61,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "publish": "vsce package && vsce publish"
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",
